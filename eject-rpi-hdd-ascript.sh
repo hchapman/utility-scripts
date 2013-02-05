@@ -1,7 +1,7 @@
 #!/bin/bash
 ## SSHs to the Raspberry Pi and then displays an AppleScript dialog if it is successful.
 
-if (ssh rpi "/etc/init.d/mpd stop && eject /dev/hd1 && /etc/init.d/mpd start")
+if (ssh rpi "mpc stop && eject /dev/hd1")
 then 
   osascript <<-EOF
     tell application "System Events"
